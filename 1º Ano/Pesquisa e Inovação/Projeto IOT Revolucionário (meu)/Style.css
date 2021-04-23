@@ -139,6 +139,8 @@ color: orangered;
     font-weight: normal;
     text-align: center;
     justify-content: center;
+    float: right;
+    color: white;
 }
 
 .historia{
@@ -188,4 +190,41 @@ color: orangered;
 .footer a{
     color: orange;
 }
+/*Fim do Footer*/
+/* Início formuláio */
 
+#formLogin{
+    width: 30%;
+    margin: auto;
+    height: 350px;
+    margin-top: 100px;
+    border-radius: 5%;
+    background-color: #ff6347ad;;
+}
+
+#formLogin h1{
+    padding-top: 15px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+#formLogin input, #formLogin label{
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    height: 35px;
+    border-radius: 5px;
+}
+
+#formLogin input{
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.butPadrao{
+    background-color: #5cd014;
+    padding: 5px;
+    width: 20%;
+    border: none;
+    margin-left: 40%;
+}
