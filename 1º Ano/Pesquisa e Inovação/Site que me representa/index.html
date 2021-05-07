@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>BandChess</title>
 </head>
+
 <body>
     <div class="body">
         <div class="navBar">
@@ -26,11 +28,71 @@
             </div>
         </div>
         <div class="container">
-            <div id="colunaEsq" class="coluna"></div>
             <div class="sobre">
-                <h2 class="textosSobre">Sobre o Xadrez</h1>
-            </div>    
-            <div id="colunaDir" class="coluna"></div>
+                <p>
+                <div id="historia">
+                    <h2 class="titulosSobre">História</h2>
+                    <span class="textosSobre">O xadrez é um dos jogos mais antigos e mais famosos da história, sua primeira versão se originou na Índia, no século VI e se chamava “Chaturanga” (esse estilo pode ser jogado no site chess.com), cada tipo de peça representava um tipo de tropa do exército indiano e tinha peças e movimentos difernetes do xadrez atual, que surgiu no sudeste europeu, na segunda metade do século XV.</span>
+                    <br>
+                    <figure class="figurasSobre">  <!--Para colocar uma imagem com legenda explicativa-->
+                        <img src="./Imagens/Chaturanga.png" class="tabuleiros">
+                        <figcaption>Posição inicial de um jogo de Chaturanga</figcaption>
+                    </figure><br>
+                    <br>
+                    <span class="textosSobre">
+                        A variante européia se tornou padrão devido à adição dos bispos (que substituíram os elefantes) e da dama (que substituiu o general, também chamado de ministro), foi ainda no final do século XV que começaram a surgir as primeiras análises de aberturas por conta das novas variações de jogadas.
+                    </span>
+                    <br>
+                    <br>
+                    <h1 class="titulosSobre">Como jogar</h1>
+                </div>
+                <div id="comoJogar">
+                    <span class="textosSobre">
+                        Cada jogador assume o controle das peças de uma cor, sendo que o jogador de brancas sempre inicia o jogo. <br>
+                        O xadrez é um jogo de turnos, ou seja, um jogador só pode fazer um lance depois de outro.
+                    </span>
+
+                    <figure class="figurasSobre">
+                        <img src="./Imagens/Tabuleiro Xadrez.png" class="tabuleiros">
+                        <figcaption>
+                            Composto de 64 casas, 32 claras e 32 escuras, dividido em 8 colunas e 8 linhas. Nele são colocadas 16 peças para cada jogador, sendo elas 8 peões, 2 torres, 2 cavalos,  2 bispos (1 de casas claras 1 de casas escuras), 1 dama e 1 rei.
+                        </figcaption>
+                    </figure><br>
+
+                    <div id="movimentarPeao">    
+                        <h2 class="subTitulosSobre">Como movimentar as peças</h2>
+                            <div id="peoes">
+                                <h2 class="subTitulosSobre">Peão</h2>
+        
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/Peão 1.png">
+                                    <figcaption>No primeiro movimento o peão pode andar duas casas para frente</figcaption>
+                                </figure><br>
+                            
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/Peão 2.png">
+                                    <figcaption>Nos movimentos seguintes o peão anda apenas uma casa, sempre para frente</figcaption>
+                                </figure><br>
+        
+                                <figure class="figurasSobre">
+                                    <img src="Imagens/Peão 3.png">
+                                    <figcaption>O peão captura apenas nas diagonais</figcaption>
+                                </figure>
+                                
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/Treino Peão.png">
+                                    <figcaption></figcaption>
+                                </figure>
+                                    <strong>
+                                        Dar um jeito de fazer um tabuleiro que permita testar os conhecimentos
+                                    </strong>
+                            </div>              
+                    </div>
+                </div>
+
+                        FAZER ISSO COM TODAS AS PEÇAS
+                </p>
+            </div>
         </div>
     </div>
 </body>

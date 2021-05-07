@@ -4,9 +4,10 @@
 }
 /* INÍCIO NAVBAR */
 .navBar{
-    background-image: linear-gradient(#f7f7c9, rgb(30, 30, 40));
+    background-image: linear-gradient(#f7f7c9, #1e1e28);
     width: 100%;
-    height: 10%;
+    height: 10vh;
+    margin: auto;
 }
 .navBar img{
     float: left;
@@ -15,7 +16,7 @@
     padding-top: 0.125%;
 }
 .navBar ul{
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     list-style: none;
     text-decoration: none;
@@ -30,9 +31,8 @@
 /* FIM NAVBAR */
 /* INÍCIO BODY */
 .body{
-    background-color: #f7f7c9;
-    height: 100vh;
-    width: 100vw;
+    background-color: #1e1e28;
+    height: fit-content;
     font-family: Helvetica, Arial, sans-serif;
 }
 /* INÍCIO BANNER */
@@ -41,6 +41,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 120vh;
+}
+.banner h1{
+    font-size: 5em;
 }
 .textosBanner{
     margin: 0;
@@ -51,11 +54,32 @@
 }
 /* FIM BANNER */
 /* INÍCIO SOBRE */
+.container, .sobre{
+    width: 80%;
+    margin: auto;
+    background-color: #f7f7c9;
+}
+.titulosSobre{
+    font-size: 72px;
+    text-align: center;
+}
 .textosSobre{
     margin: 0;
     padding: 0;
+    text-align: justify;
+    color: #1e1e28;
+    padding-top: 5vh;
+    font-size: 35px;
+}
+.figurasSobre{
+    margin: auto;
     text-align: center;
-    color: #f7f7c9;
-    padding-top: 20%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: justify;
+}
+.tabuleiros{
+    height: 30vh;
 }
 /* FIM SOBRE */
