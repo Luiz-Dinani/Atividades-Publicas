@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="body">
+        <div class="navBar">
+            <img src="./Imagens/Logo BandChess.png">
+            <ul>
+                <a href="index.html"><li>Home | </li></a>
+                <a href="aberturas.html"><li> Aberturas | </li></a>
+                <a href="top10BandChess.html"><li> Top 10 BandChess | </li></a>
+                <a href="login.html"><li class="navBarSelected">Entrar</li></a>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="containerLogin">
+                 <form id="formLogin">
+                    <input id="emailUser" placeholder="Insira seu email" required><br>
+                    <input id="nickname" placeholder="Qual o seu nickname?" maxlength="10" required> <input type="number" placeholder="Qual o seu rating?">
+                    <select id="plataforma">
+                        <option value="-1">Em qual site você joga?</option>
+                        <option value="chess">Chess.com</option>
+                        <option value="lichess">Lichess</option>
+                        <option value="chess24">Chess24</option>
+                        <option value="nenhum">Nenhum</option>
+                    </select>                    
+                 </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

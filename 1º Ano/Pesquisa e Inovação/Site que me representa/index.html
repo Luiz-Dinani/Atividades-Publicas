@@ -14,11 +14,10 @@
         <div class="navBar">
             <img src="./Imagens/Logo BandChess.png">
             <ul>
-                <li>Sobre | </li>
-                <li>Onde Jogar | </li>
-                <li>Top 10 Mundo | </li>
-                <li>Top 10 BandChess | </li>
-                <li>Entrar</li>
+                <a href="#sobre"><li>Sobre | </li></a>
+                <a href="aberturas.html"><li> Aberturas | </li></a>
+                <a href="top10BandChess.html"><li> Top 10 BandChess | </li></a>
+                <a href="login.html"><li  class="navBarSelected">Entrar</li></a>
             </ul>
         </div>
         <div class="banner">
@@ -28,72 +27,158 @@
             </div>
         </div>
         <div class="container">
-            <div class="sobre">
-                <p>
+            <div id="sobre" class="sobre">
                 <div id="historia">
                     <h2 class="titulosSobre">História</h2>
-                    <span class="textosSobre">O xadrez é um dos jogos mais antigos e mais famosos da história, sua primeira versão se originou na Índia, no século VI e se chamava “Chaturanga” (esse estilo pode ser jogado no site chess.com), cada tipo de peça representava um tipo de tropa do exército indiano e tinha peças e movimentos difernetes do xadrez atual, que surgiu no sudeste europeu, na segunda metade do século XV.</span>
+                    <span class="textosSobre">O xadrez é um dos jogos mais antigos e mais famosos da história, sua
+                        primeira versão se originou na Índia, no século VI e se chamava “Chaturanga” (esse estilo pode
+                        ser jogado no site <a href="https://www.chess.com/variants/chaturanga">chess.com</a>), cada tipo de peça representava um tipo de tropa do exército
+                        indiano e tinha peças e movimentos difernetes do xadrez atual, que surgiu no sudeste europeu, na
+                        segunda metade do século XV.</span>
                     <br>
-                    <figure class="figurasSobre">  <!--Para colocar uma imagem com legenda explicativa-->
-                        <img src="./Imagens/Chaturanga.png" class="tabuleiros">
+                    <figure class="figurasSobre">
+                        <!--Para colocar uma imagem com legenda explicativa-->
+                        <img src="./Imagens/Chaturanga.png" class="imgTabuleiros">
                         <figcaption>Posição inicial de um jogo de Chaturanga</figcaption>
                     </figure><br>
                     <br>
                     <span class="textosSobre">
-                        A variante européia se tornou padrão devido à adição dos bispos (que substituíram os elefantes) e da dama (que substituiu o general, também chamado de ministro), foi ainda no final do século XV que começaram a surgir as primeiras análises de aberturas por conta das novas variações de jogadas.
+                        A variante européia se tornou padrão devido à adição dos bispos (que substituíram os elefantes)
+                        e da dama (que substituiu o general, também chamado de ministro), foi ainda no final do século
+                        XV que começaram a surgir as primeiras análises de aberturas por conta das novas variações de
+                        jogadas.
                     </span>
                     <br>
                     <br>
                     <h1 class="titulosSobre">Como jogar</h1>
                 </div>
+
                 <div id="comoJogar">
-                    <span class="textosSobre">
-                        Cada jogador assume o controle das peças de uma cor, sendo que o jogador de brancas sempre inicia o jogo. <br>
+                    <div class="textosSobre">
+                        Cada jogador assume o controle das peças de uma cor, sendo que o jogador de brancas sempre
+                        inicia o jogo. <br>
                         O xadrez é um jogo de turnos, ou seja, um jogador só pode fazer um lance depois de outro.
-                    </span>
+                    </div>
 
                     <figure class="figurasSobre">
-                        <img src="./Imagens/Tabuleiro Xadrez.png" class="tabuleiros">
+                        <img src="./Imagens/Tabuleiro Xadrez.png" class="imgTabuleiros">
                         <figcaption>
-                            Composto de 64 casas, 32 claras e 32 escuras, dividido em 8 colunas e 8 linhas. Nele são colocadas 16 peças para cada jogador, sendo elas 8 peões, 2 torres, 2 cavalos,  2 bispos (1 de casas claras 1 de casas escuras), 1 dama e 1 rei.
+                            Composto de 64 casas, 32 claras e 32 escuras, dividido em 8 colunas e 8 linhas. Nele são
+                            colocadas 16 peças para cada jogador, sendo elas 8 peões, 2 torres, 2 cavalos, 2 bispos (1
+                            de casas claras 1 de casas escuras), 1 dama e 1 rei.
                         </figcaption>
                     </figure><br>
 
-                    <div id="movimentarPeao">    
-                        <h2 class="subTitulosSobre">Como movimentar as peças</h2>
-                            <div id="peoes">
-                                <h2 class="subTitulosSobre">Peão</h2>
-        
+                    <div id="movimentarPecas">
+                        <h2 class="subTitulos">Como movimentar as peças</h2>
+                        <h2 class="subTitulos">Peão</h2>
+
+                        <div name="Peão" class="peca">
+                            <div>
                                 <figure class="figurasSobre">
-                                    <img src="./Imagens/Peão 1.png">
-                                    <figcaption>No primeiro movimento o peão pode andar duas casas para frente</figcaption>
+                                    <img src="./Imagens/Peão 1.png" class="imgMovPecas">
+                                    <figcaption>No primeiro movimento o peão pode andar duas casas para frente
+                                    </figcaption>
                                 </figure><br>
-                            
+                            </div>
+
+                            <div>
                                 <figure class="figurasSobre">
-                                    <img src="./Imagens/Peão 2.png">
-                                    <figcaption>Nos movimentos seguintes o peão anda apenas uma casa, sempre para frente</figcaption>
+                                    <img src="./Imagens/Peão 2.png" class="imgMovPecas">
+                                    <figcaption>Nos movimentos seguintes o peão anda apenas uma casa, sempre para frente
+                                    </figcaption>
                                 </figure><br>
-        
+                            </div>
+
+                            <div>
                                 <figure class="figurasSobre">
-                                    <img src="Imagens/Peão 3.png">
+                                    <img src="Imagens/Peão 3.png" class="imgMovPecas">
                                     <figcaption>O peão captura apenas nas diagonais</figcaption>
                                 </figure>
-                                
-                                <figure class="figurasSobre">
-                                    <img src="./Imagens/Treino Peão.png">
-                                    <figcaption></figcaption>
-                                </figure>
-                                    <strong>
-                                        Dar um jeito de fazer um tabuleiro que permita testar os conhecimentos
-                                    </strong>
-                            </div>              
+                            </div>
+                        </div>
+
+                        <div name="exemploMovPeao">
+                            <h3 class="subTitulos">Exemplo de movimentação dos peões (Defesa Francesa: Variante do avanço adaptada)</h3>
+                                <div name="gifPeao" class="peca">
+                                    <img src="./Imagens/movPeoes.gif" class="gif">
+                                </div>
+                        </div>
+
+                        <!-- <table class="tabuleirosTreino">
+                            <tr name="Fileira5">
+                                <td class="quadBranco"><span class="coordNum">5</span></td>
+                                <td class="quadVerde"></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde">
+                                    <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png" class="peca">
+                                </td>
+                                <td class="quadBranco"></td>
+                            </tr>
+                            <tr name="Fileira4">
+                                <td class="quadVerde"><span class="coordNum">4</span></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde"></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde"></td>
+                            </tr>
+                            <tr name="Fileira3">
+                                <td class="quadBranco"><span class="coordNum">3</span></td>
+                                <td class="quadVerde"></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde"></td>
+                                <td class="quadBranco"></td>
+                            </tr>
+                            <tr name="Fileira2">
+                                <td class="quadVerde"> <span class="coordNum">2</span></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde"></td>
+                                <td class="quadBranco"></td>
+                                <td class="quadVerde"></td>
+                            </tr>
+                            <tr name="Fileira1">
+                                <td class="quadBranco">
+                                    <span class="coordNum">1</span>
+                                    <span class="coordLetra">A</span>
+                                </td>
+                                <td class="quadVerde"><span class="coordLetra">B</span></td>
+                                <td class="quadBranco">
+                                    <span class="coordLetra">C</span>
+                                    <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png" class="peca">
+                                </td>
+                                <td class="quadVerde"><span class="coordLetra">D</span></td>
+                                <td class="quadBranco"><span class="coordLetra">E</span></td>
+                            </tr>
+                            <h1 class="subTitulos">Treine os movimentos que acabou de aprender</h1>
+                        </table> -->
+                        
+                        <br>
+
+                        <div>
+                            <h2 class="subTitulos">Bispo</h2>
+                            <div  name="Bispo" class="peca">
+                                <div>
+                                    <figure class="figurasSobre">
+                                        <img src="./Imagens/Bispo 1.png">
+                                        <figcaption>Bispos se movem apenas na diagonal, quantas casas quiserem</figcaption>
+                                    </figure><br>
+                                </div>
+                            </div>    
+                        </div>
+
                     </div>
                 </div>
 
-                        FAZER ISSO COM TODAS AS PEÇAS
-                </p>
+                FAZER ISSO COM TODAS AS PEÇAS
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<!-- 
+    SRC das peças:
+    Peão Branco: <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png" class="peca">
+    Peão Preto:  <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png" class="peca">
+
+ -->
