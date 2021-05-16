@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="body">
+        <div class="navBar">
+            <img src="./Imagens/Logo BandChess.png">
+            <ul>
+                <a href="index.html"><li>Home | </li></a>
+                <a href="aberturas.html"><li> Aberturas | </li></a>
+                <a href="top10BandChess.html"><li> Top 10 BandChess | </li></a>
+                <a href="login.html"><li class="navBarSelected">Entrar</li></a>
+            </ul>
+        </div>
+        <div class="containerLogin">
+            <div class="conteudoCadastro">
+                <form id="formCadastro">
+                    <h1 class="titulosSobre">Cadastro</h1>
+                    <div class="inputs">
+                        <label for="emailCadastro">E-mail</label>
+                        <input id="emailCadastro" class="inputLongoCadastro" aria-required="true"><br>
+                        
+                        <div class="divInputsCurtos">
+                            <div class="inpEsq">
+                                <label for="nickname">Nickname</label>
+                                <input class="inputCurto" id="nickname" maxlength="10">
+
+                                <label for="senhaCadastro">Senha</label>
+                                <input id="senhaCadastro" class="inputCurto" type="password" aria-required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="Sem preguiça, tem que ter letra minúscula, MAIÚSCULA, algum número, pelo menos 8 e no máximo 16 caracteres" maxlength="16" required>
+                                
+                                <label for="confirmarSenha">Confirmar Senha</label>
+                                <input id="confirmarSenha" class="inputCurto" type="password" aria-required="true" pattern="senhaCadastro.value" title="Tem que ser igual a senha, duh" maxlength="16" required>
+                            </div>
+                            <div class="inpDir">
+                                <label for="rating">Qual o seu rating?</label>
+                                <input id="rating" type="number" class="inputCurto" placeholder="Se não tiver, deixe em branco">
+          
+                                <label for="plataforma">Em qual site você joga?</label>
+                                <select id="plataforma" class="inputCurto">
+                                    <option value="-1"></option>
+                                    <option value="chess">Chess.com</option>
+                                    <option value="lichess">Lichess</option>
+                                    <option value="chess24">Chess24</option>
+                                    <option value="nenhum">Nenhum</option>
+                                </select>                   
+                                
+                                <label for="tituloFide">Qual o seu título FIDE?</label>
+                                <select id="tituloFide" class="inputCurto">
+                                    <option value="-1"></option>
+                                    <option value="gm">Grande Mestre</option>
+                                    <option value="im">Mestre Internacional</option>
+                                    <option value="nm">Mestre Nacional</option>
+                                    <option value="nenhum">Nenhum</option>
+                                </select>                   
+                            </div>
+                        </div>
+                    </div>
+                    <button class="botEntrar">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

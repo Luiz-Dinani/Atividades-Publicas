@@ -8,29 +8,30 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="body">
+    <div class="bodyLogin">
         <div class="navBar">
             <img src="./Imagens/Logo BandChess.png">
             <ul>
                 <a href="index.html"><li>Home | </li></a>
-                <a href="aberturas.html"><li> Aberturas | </li></a>
-                <a href="top10BandChess.html"><li> Top 10 BandChess | </li></a>
+                <a href="aberturas.html"><li>Aberturas | </li></a>
+                <a href="top10BandChess.html"><li>Top 10 BandChess | </li></a>
                 <a href="login.html"><li class="navBarSelected">Entrar</li></a>
             </ul>
         </div>
-        <div class="container">
-            <div class="containerLogin">
-                 <form id="formLogin">
-                    <input id="emailUser" placeholder="Insira seu email" required><br>
-                    <input id="nickname" placeholder="Qual o seu nickname?" maxlength="10" required> <input type="number" placeholder="Qual o seu rating?">
-                    <select id="plataforma">
-                        <option value="-1">Em qual site você joga?</option>
-                        <option value="chess">Chess.com</option>
-                        <option value="lichess">Lichess</option>
-                        <option value="chess24">Chess24</option>
-                        <option value="nenhum">Nenhum</option>
-                    </select>                    
-                 </form>
+        <div class="containerLogin">
+            <div class="conteudoLogin">
+                <form id="formLogin">
+                    <h1 class="titulosSobre">Login</h1>
+                    <div class="divComInputs">
+                        <label for="emailUser">E-mail</label>
+                        <input id="emailUser" class="inputLongo" aria-required="true"><br>
+                        
+                        <label for="senhaUser">Senha</label>
+                        <input id="senhaUser" class="inputLongo" type="password" aria-required="true">
+                    </div>
+                    <button class="botEntrar">Entrar</button>
+                </form>
+                <p>Ainda não tem uma conta? Pare de moscar e <a href="cadastro.html">crie uma agora</a>!</p>
             </div>
         </div>
     </div>

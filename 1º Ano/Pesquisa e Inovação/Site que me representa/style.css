@@ -183,7 +183,6 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     height: 120vh;
-    box-shadow: 0 0 0 0 black;
 }
 
 .comentarios {
@@ -258,9 +257,111 @@ html {
 }
 /*Fim Aberturas*/
 /*Início Login*/
+.bodyLogin{
+    background-color: #1e1e28;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background-image: url(./Imagens/Login/pecasBonitas.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .containerLogin{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    padding-top: 5%;
+    text-align: center;
+}
+.conteudoLogin{
     background-color: rgba(245, 222, 179, 0.678);
     height: fit-content;
-    width: 35%;
+    width: 50%;
     margin: auto;
+    padding-bottom: 3%;
+    border-radius: 15px;
+}
+#formLogin{
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+#formLogin label{
+    display: block;
+    font-weight: bold;
+    padding-top: 1%;
+}
+.inputLongo{
+    height: 30px;
+    width: 90%;
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+.divComInputs{
+    text-align: left;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+.botEntrar{
+    text-align: center;
+    border-radius: 15px;
+    width: 20%;
+    height: 5vh;
+    margin-bottom: 5%;
+}
+/*Fim Login*/
+/*Início Cadastro*/
+.conteudoCadastro{
+    background-color: rgba(245, 222, 179, 0.678);
+    height: fit-content;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 3%;
+    border-radius: 15px;
+    display: inline-block;
+}
+#formCadastro{
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+#formCadastro label{
+    display: block;
+    font-weight: bold;
+    padding-top: 1%;
+}
+label:hover{
+    cursor: pointer;
+}
+.inputLongoCadastro{
+    height: 30px;
+    width: 90%;
+    font-size: 25px;
+    margin-bottom: 3%;
+}
+.divInputsCurtos{
+    display: inline-block;
+    width: 95%;
+}
+.divInputsCurtos label{
+    width: 100%;
+}
+.inputCurto{
+    width: 110%;
+    height: 20px;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+.inpEsq{
+    float: left;
+    width: 15vw;
+    text-align: left;
+    padding-left: 3%;
+}
+.inpDir{
+    float: right;
+    text-align: left;
+    margin-right: 35px;
 }
