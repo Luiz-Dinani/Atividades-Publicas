@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="bodyLogin">
+        <div class="navBar">
+            <img src="./Imagens/Logo BandChess.png">
+            <ul>
+                <a href="index.html"><li>Home | </li></a>
+                <a href="aberturas.html"><li>Aberturas | </li></a>
+                <a href="top10BandChess.html"><li>Top 10 BandChess | </li></a>
+                <a href="login.html"><li class="navBarSelected">Entrar</li></a>
+            </ul>
+        </div>
+        <div class="containerLogin">
+            <div class="conteudoLogin">
+                <form id="form_login" onsubmit="entrar()">
+                    <h1 class="titulosSobre">Login</h1>
+                    <div class="divComInputs">
+                        <label for="emailUser">E-mail</label>
+                        <input id="emailUser" name="email" class="inputLongo" aria-required="true"><br>
+                        
+                        <label for="senhaUser">Senha</label>
+                        <input id="senhaUser" name="senha" class="inputLongo" type="password" aria-required="true">
+                    </div>
+                    <button type="submit" class="botEntrar">Entrar</button>
+                </form>
+                <p>Ainda não tem uma conta? Pare de moscar e <a href="cadastro.html">crie uma agora</a>!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function entrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'top10BandChess.html';
+                    return true;
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.visibility = 'visible';
+    //     div_erro.style.visibility = 'hidden';
+    // }
+
+    // function finalizar_aguardar(resposta) {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.visibility = 'hidden';
+    //     div_erro.style.visibility = 'visible';
+    //     div_erro.innerHTML = resposta;
+    // }
+</script>
