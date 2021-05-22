@@ -5,6 +5,8 @@
 
 a:hover, button:hover{
     cursor: pointer;
+    scale: 1.2;
+    color: black;
 }
 /* INÍCIO NAVBAR */
 
@@ -62,7 +64,7 @@ html {
 /* INÍCIO BANNER */
 
 .banner {
-    background-image: url(./Imagens/Mamaco\ fumante\ jogando\ xadrez\ -\ Image\ by\ Reinhold\ Silbermann\ from\ Pixabay.jpg);
+    background-image: url(./Imagens/index/Mamaco\ fumante\ jogando\ xadrez\ -\ Image\ by\ Reinhold\ Silbermann\ from\ Pixabay.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 120vh;
@@ -296,7 +298,6 @@ html {
 /*Fim Login*/
 
 /*Início Cadastro*/
-
 .conteudoCadastro {
     background-color: rgba(245, 222, 179, 0.678);
     height: fit-content;
@@ -305,9 +306,8 @@ html {
     border-radius: 15px;
     display: inline-block;
 }
-
 #form_cadastro {
-    padding-top: 3%;
+    padding-top: 5%;
     width: 100%;
     text-align: center;
 }
@@ -317,11 +317,6 @@ html {
     font-weight: bold;
     padding-top: 1%;
 }
-
-label:hover {
-    cursor: pointer;
-}
-
 .inputLongoCadastro {
     height: 30px;
     width: 90%;
@@ -357,4 +352,38 @@ label:hover {
     float: right;
     text-align: left;
     margin-right: 35px;
+}
+
+/*Fim Cadastro*/
+/*Início Rankings*/
+.bannerRankings {
+    background-color: #1e1e28;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background-image: url(./Imagens/Rankings/banner\ Torneio\ Aberto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.containerRankings{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    padding-top: 5%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.conteudoRankings {
+    background-color: rgba(245, 222, 179, 0.678);
+    height: fit-content;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 3%;
+    border-radius: 15px;
+}
+.fotoRanking{
+    width: 45vw;
+    text-align: center;
 }

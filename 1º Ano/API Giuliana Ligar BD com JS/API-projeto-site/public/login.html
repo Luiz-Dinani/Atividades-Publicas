@@ -10,11 +10,11 @@
 <body>
     <div class="bodyLogin">
         <div class="navBar">
-            <img src="./Imagens/Logo BandChess.png">
+            <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
             <ul>
                 <a href="index.html"><li>Home | </li></a>
                 <a href="aberturas.html"><li>Aberturas | </li></a>
-                <a href="top10BandChess.html"><li>Top 10 BandChess | </li></a>
+                <a href="rankings.html"><li class="navBarSelected"> Rankings | </li></a>
                 <a href="login.html"><li class="navBarSelected">Entrar</li></a>
             </ul>
         </div>
@@ -50,10 +50,10 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nickname;
 
-                    window.location.href = 'top10BandChess.html';
+                    window.location.href = 'rankings.html';
                     return true;
                 });
 
