@@ -8,8 +8,8 @@ a:hover, button:hover{
     scale: 1.2;
     color: black;
 }
-/* INÍCIO NAVBAR */
 
+/* INÍCIO NAVBAR */
 .navBar {
     background-image: linear-gradient(#f7f7c9, #1e1e28);
     width: 100%;
@@ -111,7 +111,7 @@ html {
     font-size: 25px;
 }
 
-.imgTabuleiros {
+.imgTabuleiros{
     height: 50vh;
     margin-top: 3%;
 }
@@ -124,10 +124,13 @@ html {
     height: fit-content;
     margin-bottom: 1%;
 }
+.containerPecas{
+    width: 50vh;
+    margin-right: 5%;
+}
 
-.imgMovPecas {
+.imgMovPeao {
     height: 40vh;
-    margin-right: 3%;
 }
 
 .peca {
@@ -135,8 +138,9 @@ html {
     justify-content: center;
 }
 
-.gif {
+.gif, .imgMovPecas {
     height: 50vh;
+    width: 50vh;
 }
 
 /* FIM SOBRE */
@@ -188,15 +192,6 @@ html {
     padding-top: 3%;
     background-color: #aba7a7db;
     float: left;
-}
-
-.pp {
-    height: 36px;
-    width: 36px;
-    position: relative;
-    bottom: 2px;
-    left: 5px;
-    border-radius: 25px;
 }
 
 .nomeComentario {

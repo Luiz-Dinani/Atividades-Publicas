@@ -12,21 +12,22 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
-		},		
+		},
 		email: {
 			field: 'email',
 			type: DataTypes.STRING,
-			allowNull: true
+			unique: true,
+			allowNull: false
 		},
 		nickname: {
 			field: 'nickname',
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
 		senha: {
 			field: 'senha',
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
 		rating: {
 			field: 'rating',

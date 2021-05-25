@@ -20,7 +20,7 @@
         </div>
         <div class="containerLogin">
             <div class="conteudoLogin">
-                <form id="form_login" onsubmit="entrar()">
+                <form id="form_login" onsubmit="entrar()" method="POST">
                     <h1 class="titulosSobre">Login</h1>
                     <div class="divComInputs">
                         <label for="emailUser">E-mail</label>
@@ -50,9 +50,9 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nickname;
-
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.rating_usuario_meuapp = json.rating;
                     window.location.href = 'rankings.html';
                     return true;
                 });

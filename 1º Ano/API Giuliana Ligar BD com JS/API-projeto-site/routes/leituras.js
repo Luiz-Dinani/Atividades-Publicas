@@ -6,7 +6,7 @@ var env = process.env.NODE_ENV || 'development';
 
 /* Recuperar as últimas N leituras */
 router.get('/ultimas/:idcaminhao', function(req, res, next) {
-	
+
 	// quantas são as últimas leituras que quer? 7 está bom?
 	const limite_linhas = 7;
 

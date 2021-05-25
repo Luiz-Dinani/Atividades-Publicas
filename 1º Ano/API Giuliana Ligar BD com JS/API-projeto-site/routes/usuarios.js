@@ -55,8 +55,18 @@ router.post('/cadastrar', function(req, res, next) {
 		console.error(erro);
 		res.status(500).send(erro.message);
   	});
-});
 
+	userAbertura.create({
+		fkAberturaFavoritaBrancas: req.body.aberturaBranca,
+		fkAberturaFavoritaPreta: req.body.aberturaPreta
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
 
 /* Verificação de usuário */
 router.get('/sessao/:nickname', function(req, res, next) {

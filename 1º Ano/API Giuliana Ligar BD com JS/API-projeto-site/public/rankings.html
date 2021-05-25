@@ -104,3 +104,20 @@
     </div>
 </body>
 </html>
+
+<script>
+    window.onload(verificarLoginRanking())
+    function verificarLoginRanking() {
+    login_usuario = sessionStorage.login_usuario_meuapp;
+    nome_usuario = sessionStorage.nome_usuario_meuapp;
+    
+    if (login_usuario == undefined)  {
+        redirecionar_login();
+    } else {
+        b_usuario.innerHTML = nome_usuario;
+        validar_sessao();
+    }
+    
+}
+
+</script>
