@@ -8,15 +8,14 @@ function redirecionar_login() {
 function verificar_autenticacao() {
     login_usuario = sessionStorage.login_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
-    console.log(login_usuario)
 
     if (login_usuario == undefined)  {
-    console.log(login_usuario)
         redirecionar_login();
     } else {
         b_usuario.innerHTML = nome_usuario;
         validar_sessao();
     }
+    
 }
 
 function logoff() {
@@ -30,13 +29,13 @@ function validar_sessao() {
     .then(resposta => {
         if (resposta.ok) {
             resposta.text().then(texto => {
-                console.log('Sessão :) ', texto);
+                console.log('Sessão :) ', texto);    
             });
         } else {
             console.error('Sessão :.( ');
             logoff();
         } 
-    });
+    });    
 }
 
 function finalizar_sessao() {

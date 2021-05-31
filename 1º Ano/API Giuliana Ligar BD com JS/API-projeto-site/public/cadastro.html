@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Imagens/favicon.png" type="image/x-icon">
     <title>Cadastro</title>
 </head>
 
-<body onload="adicionarAberturasNoSelectDasBrancas(), adicionarAberturasNoSelectDasPretas()">
+<body onload="adicionarAberturasNoSelectDasBrancas(), adicionarAberturasNoSelectDasPretas()" style="overflow-y: hidden;">
     <div class="body">
         <div class="navBar">
             <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
@@ -31,10 +32,10 @@
         <div class="containerLogin">
             <div class="conteudoCadastro">
                 <h1 class="titulo">Cadastro</h1>
-                <form id="form_cadastro" method="POST">
+                <form id="form_cadastro" method="POST" onsubmit="return preCadastro()">
                     <div class="inputs">
                         <label for="email">E-mail</label>
-                        <input id="email" name="email" class="inputLongoCadastro" placeholder="email@example.com"
+                        <input id="email" type="email" name="email" class="inputLongoCadastro" placeholder="email@example.com"
                             required><br>
 
                         <div class="divInputsCurtos">
@@ -87,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="botEntrar" onclick="preCadastro()">Cadastrar</button>
+                    <button type="submit" class="botEntrar">Cadastrar</button>
                 </form>
             </div>
         </div>
@@ -105,21 +106,10 @@
     var titulado = 0
 
     function adicionarAberturasNoSelectDasBrancas(){
-        // fetch("aberturas/selectAberturas").then(resposta => {
-        //     console.log("Linha 109 do cadastro, addAberturasNoSelectDasBrancas");
-        //     if (resposta.ok) {
-        //         resposta.json().then(function(resposta){
-        //             console.log(`dados recebidos: ${JSON.stringify(resposta)}`)
-        //         })
-
                 aberturaBrancas.innerHTML = '<option value="NA">Nenhuma</option>'
                 for (let contador = 0; contador < listaCodigoECO.length; contador++){
                     aberturaBrancas.innerHTML += `<option value=${listaCodigoECO[contador]}>${listaAberturasCadastro[contador]}</option>`
                 }
-        //     }else{
-        //             console.log("A inserção no select das brancas deu errado")
-        //         }
-        // })
     }
 
     function adicionarAberturasNoSelectDasPretas(){
@@ -149,15 +139,15 @@
         }
         if(senhaCadastro.value == confirmarSenha.value){
             senhasIguais=true
+        }else{
+            alert("As senhas estão diferentes!")
         }
         if(senhasIguais){
             if (titulado == 1 && idFIDE.value != "" && rating.value != ""){
-                cadastrar();
+               cadastrar();
             }else if (titulado == 0 && rating.value != "") {
-                cadastrar();
+               cadastrar();
             }
-        }else{
-            alert("As senhas estão diferentes!")
         }
     }
 

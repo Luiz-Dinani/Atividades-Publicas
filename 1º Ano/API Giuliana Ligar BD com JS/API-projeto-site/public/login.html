@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Imagens/favicon.png" type="image/x-icon">
     <title>Login</title>
 </head>
+
 <body>
     <div class="bodyLogin">
         <div class="navBar">
             <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
             <ul>
-                <a href="index.html"><li>Home | </li></a>
-                <a href="aberturas.html"><li>Aberturas | </li></a>
-                <a href="rankings.html"><li class="navBarSelected"> Rankings | </li></a>
-                <a href="login.html"><li class="navBarSelected">Entrar</li></a>
+                <a href="index.html">
+                    <li>Home | </li>
+                </a>
+                <a href="aberturas.html">
+                    <li>Aberturas | </li>
+                </a>
+                <a href="rankings.html">
+                    <li class="navBarSelected"> Rankings | </li>
+                </a>
+                <a href="cadastro.html">
+                    <li class="navBarSelected">Cadastre-se</li>
+                </a>
             </ul>
         </div>
         <div class="containerLogin">
             <div class="conteudoLogin">
-                <form id="form_login" onsubmit="entrar()" method="POST">
+                <form id="form_login" onsubmit="return entrar()" method="POST">
                     <h1 class="titulosSobre">Login</h1>
                     <div class="divComInputs">
                         <label for="emailUser">E-mail</label>
                         <input id="emailUser" name="email" class="inputLongo" aria-required="true"><br>
-                        
+
                         <label for="senhaUser">Senha</label>
                         <input id="senhaUser" name="senha" class="inputLongo" type="password" aria-required="true">
                     </div>
@@ -36,10 +47,11 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
     function entrar() {
-        // aguardar();
+
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -50,26 +62,70 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.nome_usuario_meuapp = json.nickname;
                     sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nickname;
                     sessionStorage.rating_usuario_meuapp = json.rating;
-                    window.location.href = 'rankings.html';
-                    return true;
+                    sessionStorage.id_usuario_meuapp = json.idUsuario;
+                    sessionStorage.tituloFIDE_usuario_meuapp = json.tituloFIDE;
+
+                    if(sessionStorage.login_usuario_meuapp == 'adminBandChess@bandchess.com'){
+                        window.location.href = 'admin.html';
+                    }else{
+                        window.location.href = 'rankings.html';
+                    }
                 });
 
             } else {
 
                 console.log('Erro de login!');
-
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizar_aguardar(texto);
+                    // swal(texto, 'Por Favor Tente Novamente', 'error');
                 });
             }
         });
 
         return false;
     }
+
+
+
+
+
+
+
+
+    // function entrar() {
+    //     // aguardar();
+    //     var formulario = new URLSearchParams(new FormData(form_login));
+    //     fetch("/usuarios/autenticar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(resposta => {
+
+    //         if (resposta.ok) {
+
+    //             resposta.json().then(json => {
+
+    //                 sessionStorage.nome_usuario_meuapp = json.nickname;
+    //                 sessionStorage.login_usuario_meuapp = json.email;
+    //                 sessionStorage.rating_usuario_meuapp = json.rating;
+    //                 window.location.href = 'rankings.html';
+    //             });
+
+    //         } else {
+
+    //             console.log('Erro de login!');
+
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //                 // finalizar_aguardar(texto);
+    //             });
+    //         }
+    //     });
+
+    //     return false;
+    // }
 
     // function aguardar() {
     //     btn_entrar.disabled = true;

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./funcoes.js"></script>
+    <link rel="shortcut icon" href="./Imagens/favicon.png" type="image/x-icon">
+    <title>Perfil BandChess</title>
+</head>
+<body onload="verificar_autenticacaoPerfil()">
+    <div class="bodyPerfil">
+        <div class="navBar">
+            <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
+            <ul>
+                <a href="index.html">
+                    <li>Home | </li>
+                </a>
+                <a href="aberturas.html">
+                    <li>Aberturas | </li>
+                </a>
+                <a href="rankings.html">
+                    <li class="navBarSelected"> Rankings | </li>
+                </a>
+                <a id="perfilUser" href="login.html">
+                    <li class="navBarSelected">Entrar</li>
+                </a>
+            </ul>
+        </div>
+        <div class="containerLogin">
+            <div class="conteudoLogin">
+                <h1 id="nomeUsuario">Olá, <span id="b_usuario"></span></h1>
+                <div class="sobre">
+                    <span>Torneio Mais Recente</span><br>
+                    <span>Desempenho</span><br>
+                    <span>Posição:</span><br>
+                    <span>Vitórias:</span><br>
+                    <span>Empates:</span><br>
+                    <span>Derrotas:</span><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function verificar_autenticacaoPerfil() {
+        login_usuario = sessionStorage.login_usuario_meuapp;
+        nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+        if (login_usuario == undefined) {
+            console.log("Usuario não logado")
+            window.location.href='login.html'
+        } else {
+            b_usuario.innerHTML = nome_usuario;
+            perfilUser.href = 'perfil.html'
+            botSair.style.display =  'block'
+            validar_sessao();
+        }
+    }
+    function validar_sessao() {
+    fetch(`/usuarios/sessao/${login_usuario}`, {cache:'no-store'})
+    .then(resposta => {
+        if (resposta.ok) {
+            resposta.text().then(texto => {
+                console.log('Sessão :) ', texto);
+            });
+        } else {
+            console.error('Sessão :.( ');
+            logoff();
+        } 
+    });
+}
+</script>

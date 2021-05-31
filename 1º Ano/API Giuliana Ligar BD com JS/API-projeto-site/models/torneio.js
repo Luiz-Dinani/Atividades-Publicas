@@ -1,71 +1,61 @@
-	'use strict';
-
+'use strict';
 /* 
 lista e explicação dos Datatypes:
 https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let Usuario = sequelize.define('Usuario',{
-		idUsuario: {
-			field: 'idUsuario',
+    let Torneio = sequelize.define('Torneio',{
+		idTorneio: {
+			field: 'idTorneio',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
 		},
-		email: {
-			field: 'email',
+		nomeTorneio: {
+			field: 'nomeTorneio',
 			type: DataTypes.STRING,
 			unique: true,
 			allowNull: false
 		},
-		nickname: {
-			field: 'nickname',
+		dataTorneio: {
+			field: 'dataTorneio',
 			type: DataTypes.STRING,
+			unique: true,
 			allowNull: false
 		},
-		senha: {
-			field: 'senha',
-			type: DataTypes.STRING,
-			allowNull: false
-		},
-		rating: {
-			field: 'rating',
-			type: DataTypes.INTEGER,
-			allowNull: true
-		},
-		plataforma: {
-			field: 'plataforma',
+		campeao: {
+			field: 'Campeao',
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		tituloFIDE: {
-			field: 'tituloFIDE',
+		segundo: {
+			field: 'segundo',
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		idFIDE: {
-			field: 'idFIDE',
-			type: DataTypes.INTEGER,
-			allowNull: true
-		},
-		aberturaFavoritaBrancas: {
-			field: 'aberturaFavoritaBrancas',
+		terceiro: {
+			field: 'terceiro',
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		aberturaFavoritaPretas: {
-			field: 'aberturaFavoritaPretas',
+		quarto: {
+			field: 'quarto',
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		quinto: {
+			field: 'quinto',
 			type: DataTypes.STRING,
 			allowNull: true
 		},
 	},
 	{
-		tableName: 'usuario', 
+		tableName: 'torneio', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,
 	});
 
-    return Usuario;
+    return Torneio;
 };

@@ -6,18 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Imagens/favicon.png" type="image/x-icon">
+    <script src="funcoes.js"></script>
     <title>BandChess</title>
 </head>
 
-<body>
+<body onload="verificar_autenticacaoIndex()">
     <div class="body">
         <div class="navBar">
             <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
             <ul>
-                <a href="#sobre"><li>Sobre | </li></a>
-                <a href="aberturas.html"><li> Aberturas | </li></a>
-                <a href="rankings.html"><li class="navBarSelected"> Rankings | </li></a>
-                <a href="login.html"><li  class="navBarSelected">Entrar</li></a>
+                <a href="#sobre">
+                    <li>Sobre | </li>
+                </a>
+                <a href="aberturas.html">
+                    <li> Aberturas | </li>
+                </a>
+                <a href="rankings.html">
+                    <li class="navBarSelected"> Rankings | </li>
+                </a>
+                <a id="perfilUser" href="login.html">
+                    <li id="b_usuario">Entrar</li>
+                </a>
+                <li>
+                    <input id="botSair" class="botaoNavBar" type="button" onclick="logoff()" value="| Sair">
+                </li>
             </ul>
         </div>
         <div class="banner">
@@ -32,7 +45,8 @@
                     <h2 class="titulosSobre">História</h2>
                     <span class="textosSobre">O xadrez é um dos jogos mais antigos e mais famosos da história, sua
                         primeira versão se originou na Índia, no século VI e se chamava “Chaturanga” (esse estilo pode
-                        ser jogado no site <a href="https://www.chess.com/variants/chaturanga">chess.com</a>), cada tipo de peça representava um tipo de tropa do exército
+                        ser jogado no site <a href="https://www.chess.com/variants/chaturanga">chess.com</a>), cada tipo
+                        de peça representava um tipo de tropa do exército
                         indiano e tinha peças e movimentos difernetes do xadrez atual, que surgiu no sudeste europeu, na
                         segunda metade do século XV.</span>
                     <br>
@@ -74,172 +88,292 @@
                         <h2 class="subTitulos">Peão</h2>
 
                         <div name="Peão" class="peca">
-                            <div>
+                            <div class="containerPecas">
                                 <figure class="figurasSobre">
                                     <img src="./Imagens/index/Peão 1.png" class="imgMovPeao">
-                                    <figcaption>No primeiro movimento o peão pode andar duas casas para frente
+                                    <figcaption class="figcaptionPeao">No primeiro movimento o peão pode andar duas
+                                        casas para frente
                                     </figcaption>
                                 </figure><br>
                             </div>
 
-                            <div>
+                            <div class="containerPecas">
                                 <figure class="figurasSobre">
                                     <img src="./Imagens/index/Peão 2.png" class="imgMovPeao">
-                                    <figcaption>Nos movimentos seguintes o peão anda apenas uma casa, sempre para frente
+                                    <figcaption class="figcaptionPeao">Nos movimentos seguintes o peão anda apenas uma
+                                        casa, sempre para frente
                                     </figcaption>
                                 </figure><br>
                             </div>
 
-                            <div>
+                            <div class="containerPecas">
                                 <figure class="figurasSobre">
                                     <img src="./Imagens/index/Peão 3.png" class="imgMovPeao">
-                                    <figcaption>O peão captura apenas nas diagonais</figcaption>
+                                    <figcaption class="figcaptionPeao">O peão captura apenas nas diagonais</figcaption>
                                 </figure>
                             </div>
                         </div>
 
                         <div name="exemploMovPeao">
-                            <h3 class="subTitulos">Exemplo de movimentação dos peões (Defesa Francesa: Variante do avanço adaptada)</h3>
-                                <div name="gifPeao" class="peca">
-                                    <img src="./Imagens/index/movPeoes.gif" class="gif">
-                                </div>
+                            <h3 class="subTitulos">Exemplo de movimentação dos peões (Defesa Francesa: Variante do
+                                avanço adaptada)</h3>
+                            <div name="gifPeao" class="peca">
+                                <img src="./Imagens/index/movPeoes.gif" class="gif">
+                            </div>
                         </div>
                         <br>
 
-                        <div>
+                        <div class="containerPecas">
                             <h2 class="subTitulos">Bispo</h2>
                             <div name="Bispo" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/Bispo.png">
-                                        <figcaption>Bispos se movem apenas na diagonal, quantas casas quiserem</figcaption>
+                                        <img src="./Imagens/index/Bispo.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">Bispos se movem apenas na diagonal, quantas
+                                            casas quiserem</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploMovBispo">
-                                <div name="gifBispo" class="peca">
-                                    <img src="./Imagens/index/movBispo.gif" class="gif">
+                                <div name="exemploMovBispo">
+                                    <div name="gifBispo" class="peca">
+                                        <img src="./Imagens/index/movBispo.gif" class="gif">
+                                    </div>
                                 </div>
+                            </div>
                         </div>
 
-                        <div>
+                        <div class="containerPecas">
                             <h2 class="subTitulos">Cavalo</h2>
                             <div name="Cavalo" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/Cavalo.png">
-                                        <figcaption>Cavalos se movem em "L", ou seja, uma casa na vertical ou na horizontal e uma na diagonal</figcaption>
+                                        <img src="./Imagens/index/Cavalo.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">Cavalos se movem em "L", ou seja, uma casa na
+                                            vertical ou na horizontal e uma na diagonal</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploMovCavalo">
-                            <div name="gifCavalo" class="peca">
-                                <img src="./Imagens/index/movCavalo.gif" class="gif">
+                                <div name="exemploMovCavalo">
+                                    <div name="gifCavalo" class="peca">
+                                        <img src="./Imagens/index/movCavalo.gif" class="gif">
+                                    </div>
+                                </div>
                             </div>
-                    </div>
+                        </div>
 
-
-                        <div>
+                        <div class="containerPecas">
                             <h2 class="subTitulos">Torre</h2>
                             <div name="Torre" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/Torre.png">
-                                        <figcaption>Torres se movem em "+", quantas casas quiserem</figcaption>
+                                        <img src="./Imagens/index/Torre.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">Torres se movem em "+", quantas casas
+                                            quiserem</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploMovTorre">
-                            <div name="gifTorre" class="peca">
-                                <img src="./Imagens/index/movTorre.gif" class="gif">
+                                <div name="exemploMovTorre">
+                                    <div name="gifTorre" class="peca">
+                                        <img src="./Imagens/index/movTorre.gif" class="gif">
+                                    </div>
+                                </div>
                             </div>
-                    </div>
+                        </div>
 
-                        <div>
+                        <div class="containerPecas">
                             <h2 class="subTitulos">Dama</h2>
                             <div name="Dama" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/Dama.png">
-                                        <figcaption>A Dama se move em nas para todas as direções, quantas casas quiser</figcaption>
+                                        <img src="./Imagens/index/Dama.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">A Dama se move em nas para todas as direções,
+                                            quantas casas quiser</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploMovDama">
-                            <div name="gifDama" class="peca">
-                                <img src="./Imagens/index/movDama.gif" class="gif">
+                                <div name="exemploMovDama">
+                                    <div name="gifDama" class="peca">
+                                        <img src="./Imagens/index/movDama.gif" class="gif">
+                                    </div>
+                                </div>
                             </div>
-                    </div>
+                        </div>
 
-                        <div>
-                            <h2 class="subTitulos">Rei</h2>
+                        <h2 class="subTitulos">Rei</h2>
+                        <span>O Rei é a peça mais importante do jogo, se ele for <a href="#chequeMate">diretamente
+                                ameaçado, você é obrigado a responder com algum movimento que tire o barbudo da
+                                ameça</a>, caso tal movimento não exista, você perdeu :(</span>
+                        <div class="containerPecas">
                             <div name="Rei" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/Rei.png">
-                                        <figcaption>O Rei se move em nas para todas as direções, apenas uma casa por vez</figcaption>
+                                        <img src="./Imagens/index/Rei.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">O rei se move em nas para todas as direções,
+                                            apenas uma casa por vez</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploMovRei">
-                            <div name="gifRei" class="peca">
-                                <img src="./Imagens/index/movRei.gif" class="gif">
+                                <div name="exemploMovRei">
+                                    <div name="gifRei" class="peca">
+                                        <img src="./Imagens/index/movRei.gif" class="gif">
+                                    </div>
+                                </div>
                             </div>
-                    </div>
+                        </div>
 
-                        <h2 class="subTitulos">Movimentos Especiais</h2>
                         <div>
-                            <h2 class="subTitulos">Roque</h2>
-                            <span class="textosSobre">O roque é muito importante e deve ser feito o mais rápido possível, pois move duas peças em um só lance (Rei e a Torre) e ainda protege o rei.<br>
-                            Para que ele possa ser feito o caminho entre o rei e a torre (de qualquer lado) deve estar vazio e sem ameaças.
-                            </span>
-                            <div name="RoqueRei" class="peca">
+                            <h2 class="subTitulos" id="chequeMate">Cheque e Cheque-Mate</h2>
+                            <span class="textosSobre">Um cheque acontece quando uma peça ameaça diretamente o rei,
+                                obrigando um bloqueio ou uma fuga, quando nenhum dos dois é possível, ocorre o famoso
+                                CHEQUE-MATE e o jogo acaba, então, como diz o ditado "Vence quem der mate
+                                primeiro!"</span>
+                            <div name="Cheque" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/RoqueRei.png">
-                                        <figcaption>Roque pela ala do Rei</figcaption>
+                                        <img src="./Imagens/index/Cheque.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">A Dama está atacando o rei, os movimentos que
+                                            saem do cheque estão com o quadrado azul</figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                            <div name="RoqueDama" class="peca">
                                 <div>
                                     <figure class="figurasSobre">
-                                        <img src="./Imagens/index/RoqueDama.png">
-                                        <figcaption>Roque pela ala da Dama</figcaption>
+                                        <img src="./Imagens/index/Pastorzinho.gif" class="gif">
+                                        <figcaption class="figcaptionPeca">A Dama está atacando o rei, que não pode
+                                            capturá-la por causa do bispo em c4, que protege a dama. Esse é o mate do
+                                            Pastorzinho, tem muito iniciante que ainda cai nele, mas você não!
+                                        </figcaption>
                                     </figure><br>
                                 </div>
-                            </div>    
-                        </div>
-                        <div name="exemploRoqueAlaRei">
-                            <div name="gifRoqueAlaRei" class="peca">
-                                <img src="./Imagens/index/roqueAlaRei.gif" class="gif">
                             </div>
                         </div>
+                        <h2 class="subTitulos">Movimentos Especiais</h2>
+                        <h2 class="subTitulos">Roque</h2>
+                        <span class="textosSobre">O roque é muito importante e deve ser feito o mais rápido possível,
+                            pois move duas peças em um só lance (Rei e a Torre) e ainda protege o rei.<br>
+                            Para que ele possa ser feito o caminho entre o rei e a torre (de qualquer lado) deve estar
+                            vazio e sem ameaças.
+                        </span>
+                        <div class="containerPecas peca">
+                            <div name="RoqueRei">
+                                <div>
+                                    <figure class="figurasSobre">
+                                        <img src="./Imagens/index/RoqueRei.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">Roque pela ala do Rei</figcaption>
+                                    </figure><br>
+                                </div>
+                            </div>
+                            <div name="RoqueDama">
+                                <div>
+                                    <figure class="figurasSobre">
+                                        <img src="./Imagens/index/RoqueDama.png" class="imgMovPecas">
+                                        <figcaption class="figcaptionPeca">Roque pela ala da Dama</figcaption>
+                                    </figure><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="containerPeca peca">
+                            <div name="exemploRoqueAlaRei">
+                                <div name="gifRoqueAlaRei" class="peca">
+                                    <img src="./Imagens/index/roqueAlaRei.gif" class="imgMovPecas">
+                                </div>
+                            </div>
 
-                        </div>
-                        <div name="exemploRoqueAlaDama">
-                            <div name="gifRoqueAlaDama" class="peca">
-                                <img src="./Imagens/index/roqueAlaDama.gif" class="gif">
+                            <div name="exemploRoqueAlaDama">
+                                <div name="gifRoqueAlaDama" class="peca">
+                                    <img src="./Imagens/index/roqueAlaDama.gif" class="imgMovPecas">
+                                </div>
                             </div>
                         </div>
-                        
+                        <h2 class="subTitulos">Promoção do Peão</h2>
+                        <span class="textosSobre">É aqui que o peão supera todas as adversidades, mostra pra todo mundo
+                            que não pode ser subestimado e que um dia ele vai ser uma peça com mais mobilidade, tô certo
+                            Dattebayo!<br>
+                            Isso acontece quando o peão finalmente chega na última casa do tabuleiro, ele pode virar
+                            qualquer coisa, menos um rei. (SIM! O peão pode virar uma dama! Diversidade games)
+                        </span>
+                        <div name="Promocao" class="peca">
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/Promocao.png" class="imgMovPecas">
+                                    <figcaption class="figcaptionPeca">O peão pode virar qualquer coisa</figcaption>
+                                </figure><br>
+                            </div>
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/promocao.gif" class="imgMovPecas">
+                                    <figcaption class="figcaptionPeca"></figcaption>
+                                </figure><br>
+                            </div>
+                        </div>
+                        <h2 class="subTitulos">En-Passant</h2>
+                        <span class="textosSobre">O movimento mais BADASS de todo o xadrez, muitos iniciantes acham que
+                            o jogo bugou quando o En-Passant acontece, observe o porque:<br></span>
+                        <div name="enPassant" class="peca">
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/En-Passant.png" class="imgMovPecas">
+                                    <figcaption class="figcaptionPeca">Quando um peão anda duas casas no seu primeiro
+                                        lance e para do lado de outro peão, este pode capturar o peão recem movido,
+                                        mesmo que ele não esteja na diagonal!</figcaption>
+                                </figure><br>
+                            </div>
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/enPassant.gif" class="imgMovPecas">
+                                    <figcaption class="figcaptionPeca"></figcaption>
+                                </figure><br>
+                            </div>
+                        </div>
+                        <h2 class="subTitulos">EMPATE</h2>
+                        <span class="textosSobre">No xadrez um jogo pode empatar por acordo entre os jogadores, por
+                            repetição de lances (3 vezes) ou por afogamento (O mais frustrante de todos, quando se está
+                            do lado que estava ganhando)<br></span>
+                        <div name="empate" class="peca">
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/empateRepeticao.gif" class="imgMovPeao">
+                                    <figcaption class="figcaptionPeca">Aqui o melhor para as brancas é aceitar o empate
+                                        por repetição, pois qualquer outro lance pode levar a derrota</figcaption>
+                                </figure><br>
+                            </div>
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/Afogamento.png" class="imgMovPeao">
+                                    <figcaption class="figcaptionPeca">Nesse caso eu estava de pretas. Eu percebi que o
+                                        adversário iria promover o peão no próximo lance, então fiquei numa casa que não
+                                        me deixaria em cheque, mas também não tivesse movimentos válidos para o próximo
+                                        lance, configurando um afogamento</figcaption>
+                                </figure><br>
+                            </div>
+                            <div>
+                                <figure class="figurasSobre">
+                                    <img src="./Imagens/index/Afogamento Explicado.png" class="imgMovPeao">
+                                    <figcaption class="figcaptionPeca">Minha vez, mas sem movimentos válidos
+                                    </figcaption>
+                                </figure><br>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
-<!-- 
-    SRC das peças:
-    Peão Branco: <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png" class="peca">
-    Peão Preto:  <img src="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png" class="peca">
+<script>
+    function verificar_autenticacaoIndex() {
+        login_usuario = sessionStorage.login_usuario_meuapp;
+        nome_usuario = sessionStorage.nome_usuario_meuapp;
 
- -->
+        if (login_usuario == undefined) {
+            console.log("Usuario não logado")
+        } else if (login_usuario == 'adminBandChess@bandchess.com') {
+            b_usuario.innerHTML = nome_usuario;
+            perfilUser.href = 'admin.html'
+            botSair.style.display = 'block'
+            validar_sessao();
+        } else {
+            b_usuario.innerHTML = nome_usuario;
+            perfilUser.href = 'perfil.html'
+            botSair.style.display = 'block'
+            validar_sessao();
+        }
+    }
+</script>

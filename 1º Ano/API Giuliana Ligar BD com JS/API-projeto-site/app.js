@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usuariosRouter = require('./routes/usuarios');
 var leiturasRouter = require('./routes/leituras');
 var comentariosRouter = require('./routes/comentarios');
+var torneiosRouter = require('./routes/torneios');
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use('/', indexRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/leituras', leiturasRouter);
 app.use('/comentarios', comentariosRouter);
+app.use('/torneios', torneiosRouter);
 
 module.exports = app;

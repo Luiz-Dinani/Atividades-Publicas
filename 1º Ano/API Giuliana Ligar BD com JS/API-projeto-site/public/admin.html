@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="funcoes.js"></script>
+    <link rel="shortcut icon" href="./Imagens/favicon.png" type="image/x-icon">
+    <title>Admin BandChess</title>
+</head>
+
+<body onload="verificar_autenticacaoAdmin()">
+    <div id="body" class="bodyAdmin">
+        <div class="navBar">
+            <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
+            <ul>
+                <a href="index.html">
+                    <li>Home | </li>
+                </a>
+                <a href="aberturas.html">
+                    <li class="navBarSelected"> Aberturas | </li>
+                </a>
+                <a href="rankings.html">
+                    <li> Rankings | </li>
+                </a>
+                <a id="perfilUser" href="admin.html">
+                    <li id="b_usuario">adm</li>
+                </a>
+                <li>
+                    <input id="botSair" class="botaoNavBar" type="button" onclick="logoff()" value="| Sair">
+                </li>
+            </ul>
+        </div>
+        <div class="containerLogin">
+            <div class="conteudoLogin">
+                <h1 class="titulosSobre">ADMINISTRAÇÃO</h1>
+                <div id="addEncTorneio">
+                    <button onclick="addTorneio()">Adicionar Torneio</button><br>
+                    <button onclick="encTorneio()">Encerrar Torneio</button><br>
+                    <span class="textoSobre">Rating Médio do site: <span id="b_ratingMedio"></span> </span>
+                </div>
+                <form id="form_criarTorneio" class="escondido" onsubmit="return criarTorneio()" method="POST">
+                    <label for="nomeTorneio">Nome do Torneio</label>
+                    <input name="nomeTorneio" id="nomeTorneio" required><br>
+
+                    <label for="dataTorneio">Data do Torneio</label>
+                    <input type="date" name="dataTorneio" id="dataTorneio" required><br><br>
+                    <button type="submit">Adicionar Torneio</button>
+                    <button type="button" onclick="voltar()">Voltar</button>
+                </form>
+
+                <form id="form_encTorneio" class="escondido" method="PUT" onsubmit="return terminarTorneio()">
+                    <label for="inpIdTorneio">ID do Torneio</label>
+                    <input name="inpIdTorneio" id="inpIdTorneio"><br>
+
+                    <label for="campeao">Campeão</label>
+                    <input name="campeao" id="campeaoTorneio"><br>
+
+                    <label for="segundo">Segundo</label>
+                    <input name="segundo" id="segundoTorneio"><br>
+
+                    <label for="terceiro">Terceiro</label>
+                    <input name="terceiro" id="terceiroTorneio"><br>
+
+                    <label for="quarto">Quarto</label>
+                    <input name="quarto" id="quartoTorneio"><br>
+
+                    <label for="quinto">Quinto</label>
+                    <input name="quinto" id="quintoTorneio"><br>
+
+                    <button type="submit">Encerrar Torneio</button>
+                    <button type="button" onclick="voltar()">Voltar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function verificar_autenticacaoAdmin() {
+        login_usuario = sessionStorage.login_usuario_meuapp;
+        nome_usuario = sessionStorage.nome_usuario_meuapp;
+
+        if (login_usuario != 'adminBandChess@bandchess.com') {
+            console.log("Acesso Não Autorizado")
+            window.location.href = 'index.html'
+        } else {
+            botSair.style.display = 'block'
+            pegarRatingMedio()
+            // validar_sessao();
+        }
+    }
+
+    function pegarRatingMedio(){
+        fetch("/usuarios/admin")
+        .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        // let ratingMedio = JSON.stringify(resposta)
+                        b_ratingMedio.innerHTML = resposta[0].RatingMedio;
+                        // alert(JSON.stringify(resposta))
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
+            });
+    }
+
+    function addTorneio() {
+        addEncTorneio.style.display = 'none'
+        form_encTorneio.style.display = 'none'
+        form_criarTorneio.style.display = 'block'
+    }
+
+    function encTorneio() {
+        addEncTorneio.style.display = 'none'
+        form_criarTorneio.style.display = 'none'
+        form_encTorneio.style.display = 'block'
+    }
+
+    function voltar() {
+        form_encTorneio.style.display = 'none'
+        form_criarTorneio.style.display = 'none'
+        addEncTorneio.style.display = 'block'
+    }
+
+    function criarTorneio() {
+        var formulario = new URLSearchParams(new FormData(form_criarTorneio));
+        fetch("/torneios/cadastrarTorneio", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                alert("Torneio adicionado no BD")
+                // window.location.href = 'login.html';
+            } else {
+                console.log('Erro de Criação do Torneio!');
+                response.text().then(function (resposta) {
+                });
+
+            }
+        });
+        return false;
+    }
+
+    function terminarTorneio() {
+        var idTorneio = Number(inpIdTorneio.value)
+        let campeao = campeaoTorneio.value
+        let segundo = segundoTorneio.value
+        let terceiro = terceiroTorneio.value
+        let quarto = quartoTorneio.value
+        let quinto = quintoTorneio.value
+        var formulario = new URLSearchParams(new FormData(form_encTorneio));
+        fetch(`/torneios/encerrarTorneio/${idTorneio}/${campeao}/${segundo}/${terceiro}/${quarto}/${quinto}`, {
+            method: "PUT",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                alert("Resultado do Torneio adicionado no BD")
+                // window.location.href = 'login.html';
+            } else {
+                alert('Erro ao Encerrar o Torneio!');
+                response.text().then(function (resposta) {
+                });
+            }
+        });
+
+        return false;
+    }
+</script>

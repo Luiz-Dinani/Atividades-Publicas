@@ -3,13 +3,15 @@
     padding: 0;
 }
 
-a:hover, button:hover{
+a:hover, button:hover, li:hover{
     cursor: pointer;
-    scale: 1.2;
+    transition: all 0.5s ease-out;
+    transform: scale(1.1);
     color: black;
 }
 
 /* INÍCIO NAVBAR */
+
 .navBar {
     background-image: linear-gradient(#f7f7c9, #1e1e28);
     width: 100%;
@@ -30,7 +32,7 @@ a:hover, button:hover{
     list-style: none;
     text-decoration: none;
     padding-top: 1.5%;
-    padding-left: 50%;
+    padding-left: 70%;
 }
 
 .navBar ul li {
@@ -47,9 +49,22 @@ a:hover, button:hover{
     color: green
 }
 
+.botaoNavBar {
+    background: none;
+    color: white;
+    border-width: 0px;
+    font-size: 1em;
+    display: none;
+}
+
+.botaoNavBar:hover {
+    cursor: pointer;
+}
+
 html {
     scroll-behavior: smooth;
 }
+
 /* FIM NAVBAR */
 
 /* INÍCIO BODY */
@@ -70,7 +85,7 @@ html {
     height: 120vh;
 }
 
-.banner h1 {
+.banner h1, .bannerAberturas h1 {
     font-size: 5em;
 }
 
@@ -111,7 +126,7 @@ html {
     font-size: 25px;
 }
 
-.imgTabuleiros{
+.imgTabuleiros {
     height: 50vh;
     margin-top: 3%;
 }
@@ -124,9 +139,19 @@ html {
     height: fit-content;
     margin-bottom: 1%;
 }
-.containerPecas{
+
+.figcaptionPeao {
+    width: 40vh;
+}
+
+.figcaptionPeca {
     width: 50vh;
-    margin-right: 5%;
+}
+
+.containerPecas {
+    width: 50vh;
+    margin: auto;
+    margin-top: 3%;
 }
 
 .imgMovPeao {
@@ -141,6 +166,10 @@ html {
 .gif, .imgMovPecas {
     height: 50vh;
     width: 50vh;
+}
+
+.imgMovPecas {
+    margin-right: 5vw;
 }
 
 /* FIM SOBRE */
@@ -195,9 +224,10 @@ html {
 }
 
 .nomeComentario {
-    position: relative;
-    bottom: 25px;
+    /* position: relative;
+    bottom: 25px; */
     margin-left: 1%;
+    float: left;
 }
 
 .textoComentario {
@@ -207,17 +237,12 @@ html {
     margin-right: 3%;
     margin-left: 5%;
     background-color: rgb(200, 200, 200);
-    position: relative;
-    bottom: 15px;
-    resize: none;
+    /* position: relative; */
+    /* bottom: 15px; */
     overflow: hidden;
 }
 
-#comentarioExemplo {
-    display: none;
-}
-
-#tituloFIDE {
+.tituloFIDE {
     background-color: red;
     color: white;
     padding: 1px;
@@ -262,7 +287,7 @@ html {
     text-align: center;
 }
 
-#form_login label {
+label {
     display: block;
     font-weight: bold;
     padding-top: 1%;
@@ -293,6 +318,7 @@ html {
 /*Fim Login*/
 
 /*Início Cadastro*/
+
 .conteudoCadastro {
     background-color: rgba(245, 222, 179, 0.678);
     height: fit-content;
@@ -301,17 +327,13 @@ html {
     border-radius: 15px;
     display: inline-block;
 }
+
 #form_cadastro {
     padding-top: 5%;
     width: 100%;
     text-align: center;
 }
 
-#form_cadastro label {
-    display: block;
-    font-weight: bold;
-    padding-top: 1%;
-}
 .inputLongoCadastro {
     height: 30px;
     width: 90%;
@@ -350,7 +372,9 @@ html {
 }
 
 /*Fim Cadastro*/
+
 /*Início Rankings*/
+
 .bannerRankings {
     background-color: #1e1e28;
     height: 100vh;
@@ -361,9 +385,9 @@ html {
     background-size: cover;
 }
 
-.containerRankings{
+.containerRankings {
     width: 80%;
-    height: 100vh;
+    height: fit-content;
     margin: auto;
     padding-top: 5%;
     text-align: center;
@@ -378,7 +402,26 @@ html {
     padding-bottom: 3%;
     border-radius: 15px;
 }
-.fotoRanking{
+
+.fotoRanking {
     width: 45vw;
     text-align: center;
+}
+
+/*FIM RANKING*/
+
+/*INÍCIO ADMIN*/
+
+.bodyAdmin {
+    background-color: #1e1e28;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background-image: url(./Imagens/Admin/mainBackgroundAdmin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.escondido {
+    display: none;
 }
