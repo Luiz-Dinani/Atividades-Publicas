@@ -13,7 +13,7 @@ a:hover, button:hover, li:hover{
 /* INÍCIO NAVBAR */
 
 .navBar {
-    background-image: linear-gradient(#f7f7c9, #1e1e28);
+    background-image:  linear-gradient(#f7f7c9, #89899a);
     width: 100%;
     height: 10vh;
     margin: auto;
@@ -21,7 +21,7 @@ a:hover, button:hover, li:hover{
 
 .navBar img {
     float: left;
-    height: 90%;
+    height: 150%;
     padding-left: 2%;
     padding-top: 0.125%;
 }

@@ -24,9 +24,7 @@ CREATE TABLE Comentario (
   idComentario INT primary key auto_increment,
   fkUsuario int not null,
   textoComentario VARCHAR(500) NOT NULL,
-  resposta int,
-  foreign key (fkUser) references Usuario(idUsuario),
-  foreign key (resposta) references Comentario(idComentario)
+  foreign key (fkUsuario) references Usuario(idUsuario)
   );
 
 create table Torneio(

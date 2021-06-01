@@ -13,7 +13,6 @@ router.post('/publicar/:idUsuario', function(req, res, next) {
     Comentario.create({
         fkUsuario: idUsuario,
         textoComentario: textoComentario,
-        resposta: 1
     }).then(resultado => {
         console.log("Post realizado com sucesso!!");
         res.send(resultado);

@@ -22,12 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             field: 'textoComentario',
             type: DataTypes.STRING,
             allowNull: false
-        },
-		resposta: {
-			field: 'resposta',
-			type: DataTypes.INTEGER,
-			allowNull: true
-		}
+        }
 	}, 
 	{
 		tableName: 'comentario', 
