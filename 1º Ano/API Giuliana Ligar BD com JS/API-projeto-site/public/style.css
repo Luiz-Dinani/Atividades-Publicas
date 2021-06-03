@@ -412,16 +412,19 @@ label {
 
 /*INÍCIO ADMIN*/
 
-.bodyAdmin {
+.escondido {
+    display: none;
+}
+
+/*FIM ADMIN*/
+/*iNÍCIO PERFIL*/
+.bodyPerfil {
     background-color: #1e1e28;
     height: 100vh;
     font-family: Helvetica, Arial, sans-serif;
     overflow: hidden;
-    background-image: url(./Imagens/Admin/mainBackgroundAdmin.jpg);
+    background-image: url(https://blog.plugcrm.net/wp-content/uploads/2016/11/desempenho-equipes-vendas.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.escondido {
-    display: none;
-}
+/*FIM PERFIL*/

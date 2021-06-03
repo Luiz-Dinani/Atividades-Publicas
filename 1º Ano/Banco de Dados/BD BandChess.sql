@@ -1,7 +1,9 @@
-create database BandChess;
-alter table Usuario modify column idFIDE int(15) unique;
+-- create database BandChess;
+
 use BandChess;
-select * from abertura;
+set foreign_key_checks = 1;
+truncate usuario;
+select * from usuario;
 CREATE TABLE Usuario (
   idUsuario INT primary key auto_increment,
   email VARCHAR(45) NOT NULL,
@@ -12,7 +14,7 @@ CREATE TABLE Usuario (
   AberturaFavoritaPretas char(3),
   plataforma VARCHAR(10),
   tituloFIDE CHAR(2) check (tituloFIDE in('NO','GM', 'IM', 'NM')),
-  idFIDE int(15)
+  idFIDE int(15) unique
 );
 
 CREATE TABLE Abertura(

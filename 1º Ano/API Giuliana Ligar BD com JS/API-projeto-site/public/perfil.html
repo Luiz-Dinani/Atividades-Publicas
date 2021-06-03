@@ -19,26 +19,29 @@
                     <li>Home | </li>
                 </a>
                 <a href="aberturas.html">
-                    <li>Aberturas | </li>
+                    <li> Aberturas | </li>
                 </a>
                 <a href="rankings.html">
                     <li class="navBarSelected"> Rankings | </li>
                 </a>
-                <a id="perfilUser" href="login.html">
-                    <li class="navBarSelected">Entrar</li>
+                <a id="perfilUser" href="perfil.html">
+                    <li id="b_usuario"></li>
+                </a>
+                <a>
+                    <li onclick="logoff()">| Sair</li>
                 </a>
             </ul>
         </div>
         <div class="containerLogin">
             <div class="conteudoLogin">
-                <h1 id="nomeUsuario">Olá, <span id="b_usuario"></span></h1>
+                <h1 id="nomeUsuario">Olá, <span id="b_usuarioDesempenho"></span></h1>
                 <div class="sobre">
-                    <span>Torneio Mais Recente</span><br>
+                    <span>Torneio Mais Recente: Copa Peao</span><br>
                     <span>Desempenho</span><br>
-                    <span>Posição:</span><br>
-                    <span>Vitórias:</span><br>
-                    <span>Empates:</span><br>
-                    <span>Derrotas:</span><br>
+                    <span>Posição: 2º</span><br>
+                    <span>Vitórias: 3</span><br>
+                    <span>Empates: 0</span><br>
+                    <span>Derrotas: 1</span><br>
                 </div>
             </div>
         </div>
@@ -52,11 +55,14 @@
 
         if (login_usuario == undefined) {
             console.log("Usuario não logado")
-            window.location.href='login.html'
-        } else {
+        }else if(login_usuario == 'adminBandChess@bandchess.com'){
             b_usuario.innerHTML = nome_usuario;
-            perfilUser.href = 'perfil.html'
-            botSair.style.display =  'block'
+            b_usuarioDesempenho.innerHTML = nome_usuario;
+            perfilUser.href = 'admin.html'
+            validar_sessao();
+        }else {
+            b_usuario.innerHTML = nome_usuario;
+            b_usuarioDesempenho.innerHTML = nome_usuario;
             validar_sessao();
         }
     }
@@ -73,4 +79,5 @@
         } 
     });
 }
+
 </script>
