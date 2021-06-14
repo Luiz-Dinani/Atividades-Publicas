@@ -2,10 +2,10 @@ module.exports = {
   // Insira aqui seus dados do banco NA NUVEM AZURE
   production: {
     // altere APENAS username, password, database e host.
-    username: 'SEU_USUARIO',
-    password: 'SUA_SENHA',
-    database: 'NOME DO SEU BD',
-    host: 'LINK PARA SEU BD, ALGO COMO minhadatabase.database.windows.net',
+    username: 'AdminBandChess',
+    password: 'Senha123',
+    database: 'bandchess',
+    host: 'bandchess-server.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
@@ -25,8 +25,8 @@ module.exports = {
   // Insira aqui seus dados do banco LOCAL - MySQL Workbench
   dev: {
     // altere APENAS username, password e database.
-    username: 'root',
-    password: 'bandtec',
+    username: 'Luiz',
+    password: '998072Lu',
     database: 'bandchess',
     host: 'localhost',
     dialect: 'mysql',

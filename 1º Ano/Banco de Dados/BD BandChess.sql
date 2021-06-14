@@ -14,7 +14,7 @@ CREATE TABLE Usuario (
   AberturaFavoritaPretas char(3),
   plataforma VARCHAR(10),
   tituloFIDE CHAR(2) check (tituloFIDE in('NO','GM', 'IM', 'NM')),
-  idFIDE int(15) unique
+  idFIDE int(15)
 );
 
 CREATE TABLE Abertura(

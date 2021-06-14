@@ -12,7 +12,7 @@
     <title>Rankings</title>
 </head>
 
-<body onload="verificar_autenticacaoRankings()">
+<body>
     <div class="body">
         <div class="navBar">
             <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
@@ -26,12 +26,12 @@
                 <a href="rankings.html">
                     <li class="navBarSelected"> Rankings | </li>
                 </a>
-                <a href="perfil.html">
+                <a href="login.html">
                     <li id="b_usuario"></li>
                 </a>
-                <a>
-                    <li onclick="logoff()">| Sair</li>
-                </a>
+                <li>
+                    <input class="botaoNavBar" style="display: block;" type="button" onclick="logoff()" value="| Sair">
+                </li>
             </ul>
         </div>
         <div class="bannerRankings">
@@ -43,11 +43,8 @@
         <div class="container">
             <div class="sobre">
                 <h2 class="titulosSobre">Torneios e Rankings BandChess</h2>
-                <span class="textosSobre">Os torneios do BandChess ocorrem todo sábado às 17h e duram no máximo 2h. Eles
-                    ocorrem no Lichess, mas o ranking na lista é colocado de acordo com as informações dadas pelo
-                    jogador no momento do cadastro.<br>
-                    Venha participar!
-                </span>
+                Os torneios do BandChess ocorrem todo sábado às 17h e duram no máximo 2h. Eles ocorrem no Lichess, mas o ranking na lista é colocado de acordo com as informações dadas pelo jogador no momento do cadastro.<br>
+                Venha participar!
                 <div class="containerRankings">
                     <div name="1Lugar">
                         <h2 class="subTitulosSobre">1º) SpeedRuim2: 2400 (Chess.com)</h2>
@@ -94,22 +91,5 @@
 
 </html>
 <script>
-    function verificar_autenticacaoRankings() {
-        login_usuario = sessionStorage.login_usuario_meuapp;
-        nome_usuario = sessionStorage.nome_usuario_meuapp;
-
-        if (login_usuario == undefined) {
-            console.log("Usuario não logado")
-        } else if (login_usuario == 'adminBandChess@bandchess.com') {
-            b_usuario.innerHTML = nome_usuario;
-            perfilUser.href = 'admin.html'
-            botSair.style.display = 'block'
-            validar_sessao();
-        } else {
-            b_usuario.innerHTML = nome_usuario;
-            perfilUser.href = 'perfil.html'
-            botSair.style.display = 'block'
-            validar_sessao();
-        }
-    }
+    verificar_autenticacao()
 </script>

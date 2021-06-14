@@ -11,8 +11,8 @@
     <title>Cadastro</title>
 </head>
 
-<body onload="adicionarAberturasNoSelectDasBrancas(), adicionarAberturasNoSelectDasPretas()" style="overflow-y: hidden;">
-    <div class="body">
+<body onload="adicionarAberturasNoSelectDasBrancas(), adicionarAberturasNoSelectDasPretas()">
+    <div class="bodyLogin">
         <div class="navBar">
             <a href="index.html"><img src="./Imagens/index/Logo BandChess.png"></a>
             <ul>
@@ -33,7 +33,7 @@
         <div class="containerLogin">
             <div class="conteudoCadastro">
                 <h1 class="titulo">Cadastro</h1>
-                <form id="form_cadastro" method="POST" onsubmit="return preCadastro()">
+                <form id="form_cadastro" onsubmit="return preCadastro()">
                     <div class="inputs">
                         <label for="email">E-mail</label>
                         <input id="email" type="email" name="email" class="inputLongoCadastro" placeholder="email@example.com"
@@ -140,15 +140,15 @@
         }
         if(senhaCadastro.value == confirmarSenha.value){
             senhasIguais=true
-        }else{
-            alert("As senhas estão diferentes!")
         }
         if(senhasIguais){
             if (titulado == 1 && idFIDE.value != "" && rating.value != ""){
-               cadastrar();
+              return cadastrar();
             }else if (titulado == 0 && rating.value != "") {
-               cadastrar();
+                return cadastrar();
             }
+        }else{
+            alert("As senhas estão diferentes!")
         }
     }
 
@@ -166,8 +166,8 @@
             } else {
 
                 console.log('Erro de cadastro!');
+                console.log(response)
                 response.text().then(function (resposta) {
-
                 });
 
             }

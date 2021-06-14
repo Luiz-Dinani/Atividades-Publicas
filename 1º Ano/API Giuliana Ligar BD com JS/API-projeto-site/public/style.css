@@ -37,12 +37,12 @@ a:hover, button:hover, li:hover{
 
 .navBar ul li {
     display: inline-block;
-    color: white;
+    color: black;
 }
 
 .navBar a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .navBarSelected {
@@ -51,7 +51,7 @@ a:hover, button:hover, li:hover{
 
 .botaoNavBar {
     background: none;
-    color: white;
+    color: black;
     border-width: 0px;
     font-size: 1em;
     display: none;
@@ -173,7 +173,6 @@ html {
 }
 
 /* FIM SOBRE */
-
 /*Início Aberturas*/
 
 .bannerAberturas {
@@ -191,6 +190,10 @@ html {
     height: fit-content;
     width: 100%;
     margin-top: 10%;
+}
+
+textarea:hover{
+    cursor: text;
 }
 
 .formComentarioNovo {
@@ -249,6 +252,16 @@ html {
     text-align: center;
 }
 
+.botAbertura{
+    width: fit-content;
+    height: 7vh;
+    font-size: 5vh;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 /*Fim Aberturas*/
 
 /*Início Login*/
@@ -269,7 +282,6 @@ html {
     margin: auto;
     padding-top: 5%;
     text-align: center;
-    overflow: hidden;
 }
 
 .conteudoLogin {
@@ -316,8 +328,17 @@ label {
 }
 
 /*Fim Login*/
-
 /*Início Cadastro*/
+
+.bodyLogin {
+    background-color: #1e1e28;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background-image: url(./Imagens/);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .conteudoCadastro {
     background-color: rgba(245, 222, 179, 0.678);
@@ -379,7 +400,6 @@ label {
     background-color: #1e1e28;
     height: 100vh;
     font-family: Helvetica, Arial, sans-serif;
-    overflow: hidden;
     background-image: url(./Imagens/Rankings/banner\ Torneio\ Aberto.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -411,7 +431,15 @@ label {
 /*FIM RANKING*/
 
 /*INÍCIO ADMIN*/
-
+.bodyAdmin {
+    background-color: #1e1e28;
+    height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    background-image: url(./Imagens/Admin/mainBackgroundAdmin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .escondido {
     display: none;
 }

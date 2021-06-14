@@ -50,7 +50,7 @@ router.post('/cadastrar', function(req, res, next) {
 		tituloFIDE: req.body.tituloFIDE,
 		idFIDE: req.body.idFIDE,
 		aberturaFavoritaBrancas: req.body.aberturaBranca,
-		aberturaFavoritaPretas: req.body.aberturaPreta
+		aberturaFavoritaPretas: req.body.aberturaPreta,
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);
@@ -81,7 +81,6 @@ router.get('/sessao/:email', function(req, res, next) {
 		res.sendStatus(403);
 	}
 });
-
 
 /* Logoff de usuário */
 router.get('/sair/:email', function(req, res, next) {
@@ -115,7 +114,7 @@ router.get('/admin', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
 
     let instrucaoSql = `SELECT 
-    round(avg(rating)) as "RatingMedio"
+    round(avg(rating),0) as "RatingMedio"
     FROM usuario
     `;
 

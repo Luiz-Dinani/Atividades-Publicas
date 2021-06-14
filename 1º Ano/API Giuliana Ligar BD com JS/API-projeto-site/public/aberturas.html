@@ -151,17 +151,18 @@
                     <br>
                     Já encheu o saco da sua abertura padrão e tá a fim de brincar com algo novo? Sorteie uma abertura
                     agora mesmo (Aberturas troll inclusas)<br>
-                    <button onclick="sortearAbertura()">Sortear</button> <button onclick="mostrarAberturas()">Mostrar
-                        todas as Possibilidades</button>
-                    <div id="resultadoSorteio"></div>
-
+                    <div class="container">
+                        <button onclick="sortearAbertura()" class="botAbertura">Sortear</button> <button onclick="mostrarAberturas()" class="botAbertura">Mostrar
+                            todas as Possibilidades</button>
+                        <div id="resultadoSorteio"></div>
+                    </div>
                 </span>
             </div>
             <div class="comentarios">
                 <h3>Comentários <span id="numComentarios"></span></h3>
                 <form id="form_publicar" method="POST" onsubmit="return verificar_autenticacao()">
-                    <textarea id="newComment" name='newComment' class="inputNewComment" placeholder="Insira um comentário bem legal :D"></textarea>
-                    <button type="submit" style="margin-left: 72.85vw;">Publicar</button>
+                    <textarea id="newComment" name='newComment' class="inputNewComment" onfocus="" placeholder="Insira um comentário bem legal :D"></textarea>
+                    <button type="submit" style="margin-left: 55.85vw;">Publicar</button>
                 </form>
                 <div class="feed">
                     <div id="feed_container">
