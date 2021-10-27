@@ -1,9 +1,7 @@
 import psutil
 import time
 from connectdb import *
-from bot import mensagem, client
 import ssl
-
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -12,40 +10,31 @@ def alertaCPU(percCpu, maq):
     print(percCpu)
 
     if percCpu > 30:
-        print("Alerta CPU")
-        mensagem(f' ALERTA MÁQUINA {maq}: CPU ACIMA DE {percCpu:.2f}%')
+        print("alerta CPU")
     elif percCpu > 50:
-        print("Alerta CPU")
-        mensagem(f' ALERTA MÁQUINA {maq}: CPU ACIMA DE {percCpu:.2f}%')
+        print("alerta CPU2")
     elif percCpu > 70:
-        print("Alerta CPU")
-        mensagem(f' ALERTA MÁQUINA {maq}: CPU ACIMA DE {percCpu:.2f}%')
+        print("alerta CPU3")
 
 
 def alertaRAM(percCpu, maq):
 
     if percCpu > 30:
-        print("Alerta RAM")
-        mensagem(f' ALERTA MÁQUINA {maq}: RAM ACIMA DE {percCpu:.2f}%')
+        print("alerta ram1")
     elif percCpu > 50:
-        print("Alerta RAM")
-        mensagem(f' ALERTA MÁQUINA {maq}: RAM ACIMA DE {percCpu:.2f}%')
+        print("alerta ram2")
     elif percCpu > 70:
-        print("Alerta RAM")
-        mensagem(f' ALERTA MÁQUINA {maq}: RAM ACIMA DE {percCpu:.2f}%')
+        print("alerta ram3")
 
 
 def alertaDisco(percCpu, maq):
     print(percCpu)
     if percCpu > 30:
-        print("Alerta Disco")
-        mensagem(f' ALERTA MÁQUINA {maq}: DISCO ACIMA DE {percCpu:.2f}%')
+        print("alerta disco")
     elif percCpu > 50:
-        print("Alerta Disco")
-        mensagem(f' ALERTA MÁQUINA {maq}: DISCO ACIMA DE {percCpu:.2f}%')
-        print("Alerta Disco")
+        print("alerta disco2")
     elif percCpu > 70:
-        mensagem(f' ALERTA MÁQUINA {maq}: DISCO ACIMA DE {percCpu:.2f}%')
+        print("alerta disco3")
 
 
 def exibicaoPercentualProcessador(maq, percCpu):
@@ -54,8 +43,6 @@ def exibicaoPercentualProcessador(maq, percCpu):
     print(f"CPU: {percCpu:.2f}%")
     print("----------------------------------------------")
 
-    time.sleep(2)
-
 
 def exibicaoMemoria(maq, percentual):
     print("----------------------------------------------")
@@ -63,16 +50,12 @@ def exibicaoMemoria(maq, percentual):
     print(f"% de uso: {percentual:.2f} %\n")
     print("----------------------------------------------")
 
-    time.sleep(2)
-
 
 def exibirDisco(maq, percentual):
     print("----------------------------------------------")
     print(f'Dados do seu disco rígido na máquina {maq}:')
     print(f"% de uso: {percentual:.2f} %\n")
     print("----------------------------------------------")
-
-    time.sleep(2)
 
 
 perguntaNome = input("Olá. Bem-vindo! Qual o seu nome?\n")
@@ -83,7 +66,7 @@ try:
     print('-'*10, 'Ctrl+C para parar', '-'*10, '\n')
     while(True):
         print('Dados do processador do seu dispositivo:')
-        percCpu = psutil.cpu_percent(interval=3, percpu=False)
+        percCpu = psutil.cpu_percent(interval = 10, percpu=False)
         percCpu2 = percCpu * 2.5
         percCpu3 = (percCpu2 * 7)/3
         if percCpu2 > 100:
@@ -150,7 +133,6 @@ try:
         insert_db(percCpu, pctUsedMemory, pctUsedDisk, 100, 1)
         insert_db(percCpu2, pctUsedMemory2, pctUsedDisk2, 101, 2)
         insert_db(percCpu3, pctUsedMemory3, pctUsedDisk3, 102, 3)
-        time.sleep(2)
 except KeyboardInterrupt:
     print("Até logo!")
     pass
